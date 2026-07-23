@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Softnix PrivateClaw — The AI Workforce Platform for Enterprise · 100% On-Premise</title>
+  <meta name="description" content="Softnix PrivateClaw — Personal AI Agent for every employee, 100% On-Premise. Autonomous Harness Agent, Enterprise Knowledge, PDPA Guardrails and full Enterprise Control Plane." />
+  <link rel="icon" type="image/png" href="assets/logo-softnix.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ======================= NAV ======================= -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="#top" aria-label="Softnix PrivateClaw">
+        <img src="assets/logo-softnix.png" alt="Softnix" class="nav__logo" />
+        <span class="nav__product">Private<b>Claw</b></span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#overview" data-i18n="nav.overview">ภาพรวม</a>
+        <a href="#capabilities" data-i18n="nav.capabilities">ความสามารถ</a>
+        <a href="#governance" data-i18n="nav.governance">Governance</a>
+        <a href="#deployment" data-i18n="nav.deployment">การติดตั้ง</a>
+        <a href="#contact" data-i18n="nav.contact">ติดต่อเรา</a>
+      </nav>
+      <div class="nav__actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-switch__btn is-active" data-lang="th" type="button">ไทย</button>
+          <button class="lang-switch__btn" data-lang="en" type="button">EN</button>
+        </div>
+        <a href="#contact" class="btn btn--primary btn--sm" data-i18n="nav.cta">ขอ Demo</a>
+        <button class="nav__burger" id="navBurger" aria-label="Menu" type="button">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ======================= HERO ======================= -->
+    <section class="hero">
+      <div class="hero__glow hero__glow--orange"></div>
+      <div class="hero__glow hero__glow--blue"></div>
+      <div class="container">
+        <div class="hero__content reveal">
+          <div class="chip-row">
+            <span class="chip chip--outline" data-i18n="hero.chip1">Sovereign AI</span>
+            <span class="chip chip--outline" data-i18n="hero.chip2">100% On-Premise</span>
+            <span class="chip chip--outline" data-i18n="hero.chip3">Private Infrastructure</span>
+          </div>
+          <h1 class="hero__title" data-i18n="hero.title">The AI Workforce Platform <br />for Enterprise</h1>
+          <p class="hero__subtitle" data-i18n="hero.subtitle">สร้าง “พนักงานดิจิทัล” ที่ทำงานร่วมกับพนักงานจริงในองค์กร — AI Agent ส่วนตัวสำหรับพนักงานทุกคน ทำงานภายในองค์กรแบบ 100% On-Premise เข้าถึงข้อมูลองค์กรอย่างปลอดภัย รักษาความลับของธุรกิจไว้ภายในองค์กรอย่างครบวงจร</p>
+          <div class="hero__cta">
+            <a href="#contact" class="btn btn--primary" data-i18n="hero.cta1">ขอคำปรึกษา &amp; Demo</a>
+            <a href="#overview" class="btn btn--ghost" data-i18n="hero.cta2">ดูความสามารถของผลิตภัณฑ์</a>
+          </div>
+          <div class="hero__meta">
+            <div class="hero__meta-item"><span class="dot dot--green"></span><span data-i18n="hero.meta1">ข้อมูลไม่ออกนอกองค์กร</span></div>
+            <div class="hero__meta-item"><span class="dot dot--orange"></span><span data-i18n="hero.meta2">Guardrails รองรับ PDPA</span></div>
+            <div class="hero__meta-item"><span class="dot dot--blue"></span><span data-i18n="hero.meta3">Enterprise Control Plane</span></div>
+          </div>
+        </div>
+        <div class="hero__visual reveal">
+          <div class="browser-frame">
+            <div class="browser-frame__bar">
+              <span class="browser-frame__dot"></span><span class="browser-frame__dot"></span><span class="browser-frame__dot"></span>
+              <span class="browser-frame__url">privateclaw.your-company.internal</span>
+            </div>
+            <img src="assets/screen-home.jpg" alt="Softnix PrivateClaw — Personal AI Agent home screen" class="browser-frame__img" data-lightbox />
+          </div>
+          <p class="hero__caption" data-i18n="hero.caption">หน้าเริ่มต้นใช้งานของ Claw — Personal AI Agent ของพนักงานทุกคน</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= PILLARS STRIP ======================= -->
+    <section class="pillars">
+      <div class="container pillars__grid">
+        <div class="pillar reveal">
+          <span class="pillar__num">01</span>
+          <h3 data-i18n="pillars.1.t">Personal AI</h3>
+          <p data-i18n="pillars.1.d">AI ส่วนตัวของพนักงานทุกคน</p>
+        </div>
+        <div class="pillar reveal">
+          <span class="pillar__num">02</span>
+          <h3 data-i18n="pillars.2.t">Enterprise Knowledge</h3>
+          <p data-i18n="pillars.2.d">เข้าถึงความรู้องค์กรตามสิทธิ์</p>
+        </div>
+        <div class="pillar reveal">
+          <span class="pillar__num">03</span>
+          <h3 data-i18n="pillars.3.t">Autonomous Work</h3>
+          <p data-i18n="pillars.3.d">Harness Agent ลงมือทำงานแทน</p>
+        </div>
+        <div class="pillar reveal">
+          <span class="pillar__num">04</span>
+          <h3 data-i18n="pillars.4.t">Enterprise Governance</h3>
+          <p data-i18n="pillars.4.d">ควบคุม กำกับดูแล ปลอดภัย</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= OVERVIEW / WHY ======================= -->
+    <section class="section" id="overview">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow" data-i18n="overview.eyebrow">01 · ภาพรวมผลิตภัณฑ์</span>
+          <h2 data-i18n="overview.title">Personal AI Agent ที่องค์กรเป็นเจ้าของ 100%</h2>
+          <p data-i18n="overview.lead">Softnix PrivateClaw ให้ผู้ใช้งานทุกคนมี AI Agent ส่วนตัวที่ทำงานภายในองค์กรแบบ On-Premise เข้าถึงข้อมูลภายในอย่างปลอดภัย พร้อม Harness Agent อัจฉริยะที่ทำงานอัตโนมัติทั้งแบบตั้งเวลาและแบบ Workflow</p>
+        </div>
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <div class="card__icon" data-icon="server"></div>
+            <h3 data-i18n="overview.f1.t">100% On-Premise</h3>
+            <p data-i18n="overview.f1.d">ทำงานภายในองค์กรด้วย LLM Model ที่อยู่ภายในทั้งหมด ข้อมูลไม่ออกนอกองค์กร</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon" data-icon="shield"></div>
+            <h3 data-i18n="overview.f2.t">Privacy &amp; Security</h3>
+            <p data-i18n="overview.f2.d">รักษาความลับข้อมูลธุรกิจและข้อมูลส่วนบุคคล (PDPA) ให้อยู่ภายในองค์กร</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon" data-icon="bolt"></div>
+            <h3 data-i18n="overview.f3.t">Autonomous Work</h3>
+            <p data-i18n="overview.f3.d">Harness Agent ทำงานอัตโนมัติ ตั้งเวลาหรือทำงานแบบ Workflow แทนพนักงาน</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon" data-icon="spark"></div>
+            <h3 data-i18n="overview.f4.t">Self Improvement</h3>
+            <p data-i18n="overview.f4.d">เรียนรู้จากการใช้งานของผู้ใช้ นำมาปรับวิธีการทำงานให้เร็วและฉลาดขึ้นต่อเนื่อง</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon" data-icon="brain"></div>
+            <h3 data-i18n="overview.f5.t">Organizational Memory</h3>
+            <p data-i18n="overview.f5.d">เก็บทักษะและความรู้สำคัญไว้ในองค์กร ความรู้ไม่สูญหายเมื่อพนักงานลาออก</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon" data-icon="gauge"></div>
+            <h3 data-i18n="overview.f6.t">Enterprise Control Plane</h3>
+            <p data-i18n="overview.f6.d">ผู้ดูแลระบบควบคุม AI ได้ทั้งต้นทุน ความปลอดภัย และการกำกับดูแล</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= EMPLOYEE BENEFITS ======================= -->
+    <section class="section section--alt">
+      <div class="container split">
+        <div class="split__text reveal">
+          <span class="section__eyebrow" data-i18n="employee.eyebrow">สิ่งที่พนักงานได้รับ</span>
+          <h2 data-i18n="employee.title">ผู้ช่วยที่เข้าใจบริบทงานของคุณ</h2>
+          <ul class="check-list">
+            <li>
+              <strong data-i18n="employee.b1.t">สรุปข้อมูล &amp; แจ้งเตือน</strong>
+              <span data-i18n="employee.b1.d">สรุปเอกสาร/การประชุม และแจ้งเตือนเหตุการณ์สำคัญให้อัตโนมัติ</span>
+            </li>
+            <li>
+              <strong data-i18n="employee.b2.t">จัดการนัดหมาย</strong>
+              <span data-i18n="employee.b2.d">ช่วยจัดตารางงานและนัดหมายผ่าน Calendar Connector</span>
+            </li>
+            <li>
+              <strong data-i18n="employee.b3.t">จดจำการสนทนา (Memory)</strong>
+              <span data-i18n="employee.b3.d">จดจำบริบทการทำงานเดิม ต่อยอดงานได้ต่อเนื่อง</span>
+            </li>
+          </ul>
+        </div>
+        <div class="split__visual reveal">
+          <div class="shot">
+            <img src="assets/screen-suggest.jpg" alt="Claw intelligent task suggestions" data-lightbox />
+            <p class="shot__caption" data-i18n="employee.caption">หน้าเริ่มต้นใช้งาน พร้อมคำแนะนำงานอัจฉริยะจาก Claw</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= CAPABILITIES: HARNESS + SKILLS ======================= -->
+    <section class="section" id="capabilities">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow" data-i18n="capabilities.eyebrow">02 · ความสามารถหลัก</span>
+          <h2 data-i18n="capabilities.title">Harness Agent &amp; Skills — AI ที่ลงมือทำงานจริง</h2>
+          <p data-i18n="capabilities.lead">PrivateClaw ไม่ใช่แค่ผู้ช่วยตอบคำถาม แต่เป็น AI ที่ลงมือทำงานแทนได้จริง ผ่าน Harness Agent ที่วางแผนและลงมือทำงานเป็นขั้นตอน (Plan &amp; Execution) แบบอัตโนมัติ และ Skill ที่ผู้ใช้สร้างเองเพื่อให้ AI ดำเนินการงานเฉพาะทางแทน</p>
+        </div>
+        <div class="grid grid--4">
+          <article class="card card--mini reveal">
+            <h4 data-i18n="capabilities.h1.t">Scheduled Automation</h4>
+            <p data-i18n="capabilities.h1.d">ตั้งเวลาให้ AI ทำงานประจำอัตโนมัติ เช่น สรุปงานรายวัน แจ้งเตือน</p>
+          </article>
+          <article class="card card--mini reveal">
+            <h4 data-i18n="capabilities.h2.t">Workflow Execution</h4>
+            <p data-i18n="capabilities.h2.d">ทำงานหลายขั้นตอนต่อเนื่องเป็น Workflow ลดงานซ้ำซ้อนของพนักงาน</p>
+          </article>
+          <article class="card card--mini reveal">
+            <h4 data-i18n="capabilities.h3.t">Self Improvement</h4>
+            <p data-i18n="capabilities.h3.d">เรียนรู้จากการใช้งานจริง ปรับวิธีทำงานให้เร็วและแม่นยำขึ้นเรื่อย ๆ</p>
+          </article>
+          <article class="card card--mini reveal">
+            <h4 data-i18n="capabilities.h4.t">Enterprise Knowledge</h4>
+            <p data-i18n="capabilities.h4.d">เข้าถึงคลังความรู้และข้อมูลองค์กรได้รวดเร็วภายใต้สิทธิ์ที่กำหนด</p>
+          </article>
+        </div>
+
+        <div class="split split--reverse capabilities__demo">
+          <div class="split__text reveal">
+            <h3 data-i18n="capabilities.skillsTitle">Skills — ให้ AI ดำเนินการแทน</h3>
+            <p data-i18n="capabilities.skillsLead">ผู้ใช้สร้าง Skill เพื่อให้ AI ทำงานเฉพาะทางแทนได้หลากหลาย ช่วยเพิ่มประสิทธิภาพ ลดต้นทุน และสร้างความได้เปรียบเชิงแข่งขัน</p>
+            <div class="tag-cloud">
+              <span class="tag" data-i18n="capabilities.tag1">สรุปการประชุม</span>
+              <span class="tag" data-i18n="capabilities.tag2">สร้างใบเสนอราคา</span>
+              <span class="tag" data-i18n="capabilities.tag3">สร้างรายงาน</span>
+              <span class="tag" data-i18n="capabilities.tag4">ตรวจสอบเอกสาร</span>
+              <span class="tag" data-i18n="capabilities.tag5">แปลงรูปแบบข้อมูล</span>
+              <span class="tag" data-i18n="capabilities.tag6">หาข่าว / Research</span>
+              <span class="tag" data-i18n="capabilities.tag7">สร้างรูปภาพ</span>
+              <span class="tag" data-i18n="capabilities.tag8">เขียนอีเมล</span>
+              <span class="tag tag--more" data-i18n="capabilities.tag9">และอื่น ๆ อีกมากมาย</span>
+            </div>
+          </div>
+          <div class="split__visual reveal">
+            <div class="shot">
+              <img src="assets/screen-harness.jpg" alt="Harness Agent executing a multi-step plan" data-lightbox />
+              <p class="shot__caption" data-i18n="capabilities.caption">Harness Agent วางแผนและลงมือทำงาน 19 ขั้นตอน — สร้างเอกสาร Word อัตโนมัติ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= CONNECTORS & MODELS ======================= -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow" data-i18n="connect.eyebrow">Connectors &amp; Models</span>
+          <h2 data-i18n="connect.title">เชื่อมต่อแอปและโมเดลที่องค์กรใช้อยู่แล้ว</h2>
+          <p data-i18n="connect.lead">เชื่อมต่อกับเครื่องมือที่พนักงานใช้ทุกวัน และเลือกใช้ LLM ได้หลากหลาย — ทั้งโมเดลภายในองค์กรและผู้ให้บริการภายนอก ภายใต้การควบคุมขององค์กร</p>
+        </div>
+        <div class="duo">
+          <div class="shot reveal">
+            <img src="assets/screen-connectors.jpg" alt="Connectors — GitHub, Notion, OneDrive, Gmail, Outlook, Tavily" data-lightbox />
+            <p class="shot__caption" data-i18n="connect.caption1">Connectors — GitHub, Notion, OneDrive, Gmail, Outlook / Microsoft 365, Calendar, Web Search และอื่น ๆ</p>
+          </div>
+          <div class="shot reveal">
+            <img src="assets/screen-models.jpg" alt="My Models — OpenAI, Claude, Gemini, Softnix GenAI, OpenRouter, vLLM/Ollama" data-lightbox />
+            <p class="shot__caption" data-i18n="connect.caption2">My Models — รองรับ OpenAI, Claude, Gemini, Softnix GenAI, OpenRouter และ vLLM / Ollama</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= GOVERNANCE / CONTROL PLANE ======================= -->
+    <section class="section" id="governance">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow" data-i18n="gov.eyebrow">03 · Enterprise Control Plane &amp; Governance</span>
+          <h2 data-i18n="gov.title">ควบคุม AI ทั้งองค์กรจากศูนย์กลาง</h2>
+          <p data-i18n="gov.lead">ผู้ดูแลระบบสร้าง User Claw (Personal AI Agent) ให้ผู้ใช้แต่ละคน กำหนดนโยบายการใช้งาน สิทธิ์การเข้าถึงข้อมูล และควบคุมความปลอดภัยได้จากศูนย์กลาง</p>
+        </div>
+
+        <div class="tabs reveal" id="govTabs">
+          <div class="tabs__bar" role="tablist">
+            <button class="tabs__btn is-active" role="tab" data-tab="guardrails" type="button" data-i18n="gov.tab1">Guardrails (PDPA)</button>
+            <button class="tabs__btn" role="tab" data-tab="plans" type="button" data-i18n="gov.tab2">Plans &amp; Quota</button>
+            <button class="tabs__btn" role="tab" data-tab="tokens" type="button" data-i18n="gov.tab3">Usage Dashboard</button>
+          </div>
+          <div class="tabs__panel is-active" data-panel="guardrails">
+            <div class="shot">
+              <img src="assets/screen-guardrails.jpg" alt="Guardrails — masking and blocking sensitive data" data-lightbox />
+              <p class="shot__caption" data-i18n="gov.caption1">Guardrails — masking/blocking ข้อมูลอ่อนไหว เช่น บัตรเครดิต อีเมล และข้อมูลส่วนบุคคล</p>
+            </div>
+          </div>
+          <div class="tabs__panel" data-panel="plans">
+            <div class="shot">
+              <img src="assets/screen-plans.jpg" alt="Plan ladder — usage quotas per plan" data-lightbox />
+              <p class="shot__caption" data-i18n="gov.caption2">Plan Ladder — กำหนดเพดานข้อความ/รูปภาพ/ความถี่ ต่อแผนการใช้งาน</p>
+            </div>
+          </div>
+          <div class="tabs__panel" data-panel="tokens">
+            <div class="shot">
+              <img src="assets/screen-tokens.jpg" alt="Token usage dashboard by user, model and provider" data-lightbox />
+              <p class="shot__caption" data-i18n="gov.caption3">Dashboard วิเคราะห์การใช้ Token รายผู้ใช้ / โมเดล / ผู้ให้บริการ</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid--3 gov__grid">
+          <article class="card card--mini reveal">
+            <h4 data-i18n="gov.f1.t">Users &amp; Claw</h4>
+            <p data-i18n="gov.f1.d">สร้างและจัดการ AI Agent ส่วนตัวให้ผู้ใช้แต่ละคนในองค์กร</p>
+          </article>
+          <article class="card card--mini reveal">
+            <h4 data-i18n="gov.f2.t">Plans &amp; Quota</h4>
+            <p data-i18n="gov.f2.d">กำหนดโควต้าการใช้งานต่อวัน/เดือน/ปี และเพดานค่าใช้จ่าย</p>
+          </article>
+          <article class="card card--mini reveal">
+            <h4 data-i18n="gov.f3.t">Guardrails (PDPA)</h4>
+            <p data-i18n="gov.f3.d">นโยบายความปลอดภัย กรองเนื้อหาไม่เหมาะสม/ความลับ/ข้อมูลส่วนบุคคล</p>
+          </article>
+          <article class="card card--mini reveal">
+            <h4 data-i18n="gov.f4.t">Access Control</h4>
+            <p data-i18n="gov.f4.d">กำหนดสิทธิ์การเข้าถึงข้อมูลและ Connector ในแต่ละระดับ</p>
+          </article>
+          <article class="card card--mini reveal">
+            <h4 data-i18n="gov.f5.t">LLM Providers</h4>
+            <p data-i18n="gov.f5.d">เพิ่มโมเดลของตัวเองได้ เช่น ผ่าน Token API จากผู้ให้บริการอื่น</p>
+          </article>
+          <article class="card card--mini reveal">
+            <h4 data-i18n="gov.f6.t">Usage &amp; Audit Logs</h4>
+            <p data-i18n="gov.f6.d">ติดตามการใช้ Token, กิจกรรม และบันทึกการตรวจสอบย้อนหลัง</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= BUSINESS OUTCOMES ======================= -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow" data-i18n="outcomes.eyebrow">04 · ผลลัพธ์ทางธุรกิจ</span>
+          <h2 data-i18n="outcomes.title">สิ่งที่องค์กรได้รับ</h2>
+        </div>
+        <div class="table-wrap reveal">
+          <table class="table">
+            <thead>
+              <tr>
+                <th data-i18n="outcomes.th1">สิ่งที่องค์กรได้รับ</th>
+                <th data-i18n="outcomes.th2">ผลลัพธ์ทางธุรกิจ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-i18n="outcomes.r1a">Personal AI สำหรับพนักงานทุกคน</td><td data-i18n="outcomes.r1b">เพิ่มประสิทธิภาพการทำงาน</td></tr>
+              <tr><td data-i18n="outcomes.r2a">Organizational Memory</td><td data-i18n="outcomes.r2b">ความรู้ไม่สูญหายเมื่อพนักงานลาออก</td></tr>
+              <tr><td data-i18n="outcomes.r3a">Harness Agent</td><td data-i18n="outcomes.r3b">ลดงานซ้ำและทำงานอัตโนมัติ</td></tr>
+              <tr><td data-i18n="outcomes.r4a">Enterprise Knowledge</td><td data-i18n="outcomes.r4b">เข้าถึงข้อมูลได้รวดเร็วภายใต้สิทธิ์ที่กำหนด</td></tr>
+              <tr><td data-i18n="outcomes.r5a">Self Improvement</td><td data-i18n="outcomes.r5b">องค์กรเรียนรู้และพัฒนาวิธีทำงานอย่างต่อเนื่อง</td></tr>
+              <tr><td data-i18n="outcomes.r6a">Enterprise Control Plane</td><td data-i18n="outcomes.r6b">ควบคุม AI ได้ทั้งต้นทุน ความปลอดภัย และการกำกับดูแล</td></tr>
+              <tr><td data-i18n="outcomes.r7a">Private Infrastructure</td><td data-i18n="outcomes.r7b">รักษาความลับทางธุรกิจและข้อมูลส่วนบุคคลภายในองค์กร</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="result-note reveal" data-i18n="outcomes.note">รักษาทักษะสำคัญของพนักงานให้อยู่ในองค์กร · ช่วยพนักงานใหม่เรียนรู้งานได้เร็ว · ลดการพึ่งพาผู้ให้บริการภายนอก · และสนับสนุนให้คนในองค์กรเข้าถึงเทคโนโลยี AI ได้ง่าย โดยยังควบคุมข้อมูลและความปลอดภัยได้เต็มที่</p>
+      </div>
+    </section>
+
+    <!-- ======================= DEPLOYMENT ======================= -->
+    <section class="section" id="deployment">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow" data-i18n="deploy.eyebrow">การติดตั้ง &amp; สถาปัตยกรรม</span>
+          <h2 data-i18n="deploy.title">Deployment บน Private Infrastructure ของคุณ</h2>
+        </div>
+        <div class="grid grid--4">
+          <article class="card reveal">
+            <div class="card__icon" data-icon="server"></div>
+            <h4 data-i18n="deploy.d1.t">HPE Server + GPU</h4>
+            <p data-i18n="deploy.d1.d">ติดตั้งบน HPE Server ที่มี GPU ประมวลผล AI ภายในองค์กร</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon" data-icon="lock"></div>
+            <h4 data-i18n="deploy.d2.t">100% On-Prem LLM</h4>
+            <p data-i18n="deploy.d2.d">ทำงานด้วย LLM Model ที่อยู่ภายในองค์กรทั้งหมด</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon" data-icon="plug"></div>
+            <h4 data-i18n="deploy.d3.t">Bring Your Own Model</h4>
+            <p data-i18n="deploy.d3.d">เพิ่มโมเดลของตัวเองได้ เช่น ผ่าน Token API ผู้ให้บริการอื่น</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon" data-icon="headset"></div>
+            <h4 data-i18n="deploy.d4.t">Enterprise Support</h4>
+            <p data-i18n="deploy.d4.d">บริการช่วยเหลือหลังการขายระดับ Enterprise</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= STRATEGIC VISION (DARK) ======================= -->
+    <section class="vision">
+      <div class="container">
+        <div class="vision__head reveal">
+          <span class="section__eyebrow section__eyebrow--light" data-i18n="vision.eyebrow">Strategic Vision</span>
+          <h2 data-i18n="vision.title">The AI Workforce Platform for Enterprise</h2>
+          <p data-i18n="vision.lead">มากกว่าการเป็นเพียง “Private ChatGPT” หรือ “On-Prem LLM” — PrivateClaw คือแพลตฟอร์มสร้าง “พนักงานดิจิทัล” ที่ทำงานร่วมกับพนักงานจริง สอดคล้องกับแนวทาง Sovereign AI, On-Premise และการควบคุมข้อมูลภายในองค์กรอย่างครบวงจร</p>
+        </div>
+        <div class="vision__grid">
+          <div class="vision__item reveal">
+            <h4 data-i18n="vision.v1.t">Personal AI</h4>
+            <p data-i18n="vision.v1.d">AI ส่วนตัวของพนักงานทุกคน</p>
+          </div>
+          <div class="vision__item reveal">
+            <h4 data-i18n="vision.v2.t">Enterprise Knowledge</h4>
+            <p data-i18n="vision.v2.d">เข้าถึงความรู้องค์กรตามสิทธิ์</p>
+          </div>
+          <div class="vision__item reveal">
+            <h4 data-i18n="vision.v3.t">Autonomous Work</h4>
+            <p data-i18n="vision.v3.d">Harness Agent ทำงานแทน</p>
+          </div>
+          <div class="vision__item reveal">
+            <h4 data-i18n="vision.v4.t">Enterprise Governance</h4>
+            <p data-i18n="vision.v4.d">ควบคุม กำกับดูแล ปลอดภัย</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= CTA / CONTACT ======================= -->
+    <section class="cta" id="contact">
+      <div class="container cta__inner reveal">
+        <img src="assets/logo-softnix-white.png" alt="Softnix" class="cta__logo" />
+        <h2 data-i18n="cta.title">พร้อมสร้าง AI Workforce ในองค์กรของคุณ</h2>
+        <p data-i18n="cta.lead">ติดต่อทีมงาน Softnix เพื่อรับคำปรึกษาและ Demo — สำหรับองค์กรและ System Integrator พาร์ทเนอร์</p>
+        <div class="cta__actions">
+          <a class="btn btn--light" href="https://www.softnix.co.th" target="_blank" rel="noopener" data-i18n="cta.btn1">ติดต่อทีมงาน Softnix</a>
+          <a class="btn btn--outline-light" href="https://www.softnix.co.th" target="_blank" rel="noopener">www.softnix.co.th</a>
+        </div>
+        <p class="cta__company" data-i18n="cta.company">Softnix Technology Co., Ltd.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo-softnix-white.png" alt="Softnix" class="footer__logo" />
+        <p data-i18n="footer.tag">Softnix PrivateClaw — Personal AI Agent for Enterprise · 100% On-Premise</p>
+      </div>
+      <div class="footer__links">
+        <a href="#overview" data-i18n="nav.overview">ภาพรวม</a>
+        <a href="#capabilities" data-i18n="nav.capabilities">ความสามารถ</a>
+        <a href="#governance" data-i18n="nav.governance">Governance</a>
+        <a href="#deployment" data-i18n="nav.deployment">การติดตั้ง</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span data-i18n="footer.copy">© 2026 Softnix Technology Co., Ltd. สงวนลิขสิทธิ์</span>
+      <a href="https://www.softnix.co.th" target="_blank" rel="noopener">www.softnix.co.th</a>
+    </div>
+  </footer>
+
+  <!-- ======================= LIGHTBOX ======================= -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close" type="button">&times;</button>
+    <img src="" alt="" id="lightboxImg" />
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
