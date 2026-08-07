@@ -444,6 +444,149 @@ h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); }
   gap: 34px;
 }
 
+.duo .shot img {
+  aspect-ratio: 1600 / 890;
+  object-fit: contain;
+  background: var(--surface);
+}
+
+/* ---------------- Appliance showcase ---------------- */
+.appliance {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 40px;
+  margin-bottom: 48px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.appliance__rack {
+  position: relative;
+  background:
+    radial-gradient(120% 90% at 50% 18%, rgba(239, 143, 58, 0.10), transparent 60%),
+    linear-gradient(180deg, #1d1913 0%, #14110c 100%);
+  border: 1px solid var(--dark-line);
+  border-radius: var(--radius-sm);
+  padding: 46px 40px 40px;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.appliance__grid-deco {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(80% 80% at 50% 40%, #000 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(80% 80% at 50% 40%, #000 30%, transparent 85%);
+  pointer-events: none;
+}
+.appliance__server {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.55));
+  z-index: 2;
+}
+.appliance__badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(118, 185, 12, 0.14);
+  border: 1px solid rgba(118, 185, 12, 0.4);
+  border-radius: 12px;
+  padding: 7px 11px;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+  backdrop-filter: blur(4px);
+}
+.appliance__nvidia { width: 72px; height: auto; display: block; }
+.appliance__tag {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #e6f4d6;
+  background: rgba(141, 198, 63, 0.16);
+  border: 1px solid rgba(141, 198, 63, 0.45);
+  padding: 5px 12px;
+  border-radius: 999px;
+  z-index: 3;
+}
+.appliance__tag .dot { box-shadow: 0 0 0 0 rgba(141, 198, 63, 0.6); animation: pulse 2s infinite; }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(141, 198, 63, 0.55); }
+  70% { box-shadow: 0 0 0 7px rgba(141, 198, 63, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(141, 198, 63, 0); }
+}
+
+.appliance__text { padding: 4px 0; }
+.appliance__kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+.appliance__text h3 {
+  font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+  margin-bottom: 14px;
+}
+.appliance__text > p { color: var(--muted); margin-bottom: 26px; }
+
+.appliance__specs {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 18px;
+}
+.appliance__specs li {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 0.93rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.spec__icon {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: var(--bg-alt);
+  border: 1px solid var(--line-soft);
+  position: relative;
+}
+.spec__icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 17px 17px;
+}
+.spec__icon[data-icon="server"]::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ef8f3a' stroke-width='1.8'%3E%3Crect x='3' y='4' width='18' height='7' rx='2'/%3E%3Crect x='3' y='13' width='18' height='7' rx='2'/%3E%3Ccircle cx='7' cy='7.5' r='1' fill='%23ef8f3a'/%3E%3Ccircle cx='7' cy='16.5' r='1' fill='%23ef8f3a'/%3E%3C/svg%3E"); }
+.spec__icon[data-icon="bolt"]::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23f0a13c' stroke-width='1.8'%3E%3Cpath d='M13 2L4 14h6l-1 8 9-12h-6l1-8z'/%3E%3C/svg%3E"); }
+.spec__icon[data-icon="lock"]::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233e9bd8' stroke-width='1.8'%3E%3Crect x='5' y='11' width='14' height='9' rx='2'/%3E%3Cpath d='M8 11V8a4 4 0 1 1 8 0v3'/%3E%3Ccircle cx='12' cy='15.5' r='1.2' fill='%233e9bd8'/%3E%3C/svg%3E"); }
+.spec__icon[data-icon="headset"]::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ef8f3a' stroke-width='1.8'%3E%3Cpath d='M4 13a8 8 0 1 1 16 0'/%3E%3Crect x='3' y='13' width='4' height='6' rx='1.5'/%3E%3Crect x='17' y='13' width='4' height='6' rx='1.5'/%3E%3Cpath d='M20 19a3 3 0 0 1-3 3h-3'/%3E%3C/svg%3E"); }
+
 /* ---------------- Tabs ---------------- */
 .tabs { margin-bottom: 56px; }
 .tabs__bar {
@@ -692,13 +835,15 @@ h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); }
   .split, .split--reverse { grid-template-columns: 1fr; gap: 40px; }
   .split--reverse .split__visual { order: -1; }
   .duo { grid-template-columns: 1fr; }
+  .appliance { grid-template-columns: 1fr; gap: 32px; padding: 28px; }
 }
 
 @media (max-width: 760px) {
   body { font-size: 15.5px; }
   .section { padding: 68px 0; }
   .hero { padding-top: 56px; }
-  .hero__title { font-size: 1.95rem; letter-spacing: -0.02em; }  .nav__links {
+  .hero__title { font-size: 1.95rem; letter-spacing: -0.02em; }
+  .nav__links {
     display: none;
     position: absolute;
     top: 72px; left: 0; right: 0;
@@ -719,6 +864,9 @@ h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); }
   .table th, .table td { padding: 13px 16px; font-size: 0.9rem; }
   .tabs__bar { display: flex; width: 100%; }
   .footer__inner { flex-direction: column; align-items: flex-start; }
+  .appliance { padding: 20px; gap: 26px; }
+  .appliance__rack { padding: 34px 24px 28px; min-height: 230px; }
+  .appliance__specs { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {

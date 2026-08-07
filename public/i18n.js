@@ -87,7 +87,7 @@ const I18N = {
     "connect.title": "เชื่อมต่อแอปและโมเดลที่องค์กรใช้อยู่แล้ว",
     "connect.lead": "เชื่อมต่อกับเครื่องมือที่พนักงานใช้ทุกวัน และเลือกใช้ LLM ได้หลากหลาย — ทั้งโมเดลภายในองค์กรและผู้ให้บริการภายนอก ภายใต้การควบคุมขององค์กร",
     "connect.caption1": "Connectors — GitHub, Notion, OneDrive, Gmail, Outlook / Microsoft 365, Calendar, Web Search และอื่น ๆ",
-    "connect.caption2": "My Models — รองรับ OpenAI, Claude, Gemini, Softnix GenAI, OpenRouter และ vLLM / Ollama",
+    "connect.caption2": "LLM Providers — รองรับ OpenAI, Claude, Gemini, Softnix GenAI, OpenRouter และ vLLM / Ollama",
 
     "gov.eyebrow": "03 · Enterprise Control Plane & Governance",
     "gov.title": "ควบคุม AI ทั้งองค์กรจากศูนย์กลาง",
@@ -141,6 +141,15 @@ const I18N = {
     "deploy.d3.d": "เพิ่มโมเดลของตัวเองได้ เช่น ผ่าน Token API ผู้ให้บริการอื่น",
     "deploy.d4.t": "Enterprise Support",
     "deploy.d4.d": "บริการช่วยเหลือหลังการขายระดับ Enterprise",
+
+    "deploy.appliance.kicker": "Ready-to-Use Appliance",
+    "deploy.appliance.title": "ตู้ Server พร้อมใช้ — Deploy ได้ทันที",
+    "deploy.appliance.lead": "Softnix PrivateClaw ติดตั้งบน HPE ProLiant DL380 Gen10 พร้อม NVIDIA GPU เพื่อประมวลผล AI ภายในองค์กร เสียบใช้งานได้ทันที ข้อมูลไม่ออกนอกองค์กร",
+    "deploy.appliance.live": "พร้อมใช้งาน",
+    "deploy.spec1": "HPE ProLiant DL380 Gen10",
+    "deploy.spec2": "NVIDIA GPU Acceleration",
+    "deploy.spec3": "100% On-Prem LLM",
+    "deploy.spec4": "Enterprise Support",
 
     "vision.eyebrow": "Strategic Vision",
     "vision.title": "The AI Workforce Platform for Enterprise",
@@ -246,7 +255,7 @@ const I18N = {
     "connect.title": "Connects to the apps and models you already use",
     "connect.lead": "Connect to the tools your employees use every day, and choose from a wide range of LLMs — both in-house models and external providers — under your organization's control.",
     "connect.caption1": "Connectors — GitHub, Notion, OneDrive, Gmail, Outlook / Microsoft 365, Calendar, Web Search, and more",
-    "connect.caption2": "My Models — supports OpenAI, Claude, Gemini, Softnix GenAI, OpenRouter, and vLLM / Ollama",
+    "connect.caption2": "LLM Providers — supports OpenAI, Claude, Gemini, Softnix GenAI, OpenRouter, and vLLM / Ollama",
 
     "gov.eyebrow": "03 · Enterprise Control Plane & Governance",
     "gov.title": "Govern AI across the organization from one place",
@@ -300,6 +309,15 @@ const I18N = {
     "deploy.d3.d": "Add your own models, e.g. via third-party Token APIs.",
     "deploy.d4.t": "Enterprise Support",
     "deploy.d4.d": "Enterprise-grade post-sales support and assistance.",
+
+    "deploy.appliance.kicker": "Ready-to-Use Appliance",
+    "deploy.appliance.title": "A turnkey server appliance — deploy in minutes",
+    "deploy.appliance.lead": "Softnix PrivateClaw runs on an HPE ProLiant DL380 Gen10 with NVIDIA GPUs for on-site AI processing. Plug it in and start immediately — your data never leaves the organization.",
+    "deploy.appliance.live": "Ready to run",
+    "deploy.spec1": "HPE ProLiant DL380 Gen10",
+    "deploy.spec2": "NVIDIA GPU Acceleration",
+    "deploy.spec3": "100% On-Prem LLM",
+    "deploy.spec4": "Enterprise Support",
 
     "vision.eyebrow": "Strategic Vision",
     "vision.title": "The AI Workforce Platform for Enterprise",
