@@ -144,11 +144,11 @@ const I18N = {
     "deploy.d4.d": "บริการช่วยเหลือหลังการขายระดับ Enterprise",
 
     "deploy.appliance.kicker": "Ready-to-Use Appliance",
-    "deploy.appliance.title": "ตู้ Server พร้อมใช้ — Deploy ได้ทันที",
-    "deploy.appliance.lead": "Softnix PrivateClaw ติดตั้งบน HPE ProLiant DL380 Gen10 พร้อม NVIDIA GPU เพื่อประมวลผล AI ภายในองค์กร เสียบใช้งานได้ทันที ข้อมูลไม่ออกนอกองค์กร",
+    "deploy.appliance.title": "GPU Server พร้อมใช้ — Deploy ได้ทันที",
+    "deploy.appliance.lead": "Softnix PrivateClaw ติดตั้งบน HPE ProLiant DL380 Gen12 พร้อม NVIDIA GPU เพื่อประมวลผล AI ภายในองค์กร เสียบใช้งานได้ทันที ข้อมูลไม่ออกนอกองค์กร",
     "deploy.appliance.live": "พร้อมใช้งาน",
-    "deploy.spec1": "HPE ProLiant DL380 Gen10",
-    "deploy.spec2": "NVIDIA GPU Acceleration",
+    "deploy.spec1": "HPE ProLiant DL380 Gen12",
+    "deploy.spec2": "NVIDIA GPU RTX Pro 6000",
     "deploy.spec3": "100% On-Prem LLM",
     "deploy.spec4": "Enterprise Support",
 
@@ -337,11 +337,11 @@ const I18N = {
     "deploy.d4.d": "Enterprise-grade post-sales support and assistance.",
 
     "deploy.appliance.kicker": "Ready-to-Use Appliance",
-    "deploy.appliance.title": "A turnkey server appliance — deploy in minutes",
-    "deploy.appliance.lead": "Softnix PrivateClaw runs on an HPE ProLiant DL380 Gen10 with NVIDIA GPUs for on-site AI processing. Plug it in and start immediately — your data never leaves the organization.",
+    "deploy.appliance.title": "A turnkey GPU server appliance — deploy in minutes",
+    "deploy.appliance.lead": "Softnix PrivateClaw runs on an HPE ProLiant DL380 Gen12 with NVIDIA GPUs for on-site AI processing. Plug it in and start immediately — your data never leaves the organization.",
     "deploy.appliance.live": "Ready to run",
-    "deploy.spec1": "HPE ProLiant DL380 Gen10",
-    "deploy.spec2": "NVIDIA GPU Acceleration",
+    "deploy.spec1": "HPE ProLiant DL380 Gen12",
+    "deploy.spec2": "NVIDIA GPU RTX Pro 6000",
     "deploy.spec3": "100% On-Prem LLM",
     "deploy.spec4": "Enterprise Support",
 
