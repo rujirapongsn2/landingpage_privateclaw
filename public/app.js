@@ -39,6 +39,8 @@
       : "Softnix PrivateClaw — The AI Workforce Platform for Enterprise · 100% On-Premise";
 
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) { /* ignore */ }
+
+    document.dispatchEvent(new CustomEvent("privateclaw:langchange", { detail: { lang: lang } }));
   }
 
   document.querySelectorAll(".lang-switch__btn").forEach(function (btn) {
@@ -128,4 +130,80 @@
   } else {
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
+
+  /* ---------------- Hero: Download Datasheet (per language) ---------------- */
+  var DATASHEET_URL = {
+    th: "assets/Softnix_PrivateClaw_Datasheet_TH.pdf",
+    en: "assets/Softnix_PrivateClaw_Datasheet_EN.pdf"
+  };
+  var heroDatasheetLink = document.getElementById("heroDatasheetLink");
+
+  function syncDatasheetLink(lang) {
+    if (!heroDatasheetLink) return;
+    var url = DATASHEET_URL[lang] || DATASHEET_URL.th;
+    heroDatasheetLink.setAttribute("href", url);
+  }
+
+  /* ---------------- Contact: HubSpot form (per language) ---------------- */
+  var HS_PORTAL = "7556917";
+  var HS_REGION = "na1";
+  var HS_FORM = { th: "61121b2b-8433-4dbd-9343-7bc6e531017f", en: "dbcf71de-b383-4c29-aef0-a5422700ea75" };
+  var hsFormHost = document.getElementById("hubspotContactForm");
+  var hsReady = null;
+  var currentHsLang = null;
+
+  function loadHubSpotScript() {
+    if (window.hbspt && window.hbspt.forms) return Promise.resolve();
+    if (hsReady) return hsReady;
+    hsReady = new Promise(function (resolve, reject) {
+      var existing = document.querySelector('script[src*="js.hsforms.net/forms/embed"]');
+      if (existing) {
+        if (window.hbspt && window.hbspt.forms) { resolve(); return; }
+        existing.addEventListener("load", function () { resolve(); });
+        existing.addEventListener("error", reject);
+        return;
+      }
+      var s = document.createElement("script");
+      s.charset = "utf-8";
+      s.src = "https://js.hsforms.net/forms/embed/v2.js";
+      s.onload = function () { resolve(); };
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+    return hsReady;
+  }
+
+  function renderHubSpotForm(lang) {
+    if (!hsFormHost || currentHsLang === lang) return;
+    currentHsLang = lang;
+    hsFormHost.innerHTML = '<p class="cta__hs-form-loading">' +
+      (lang === "th" ? "กำลังโหลดแบบฟอร์ม…" : "Loading form…") + "</p>";
+    loadHubSpotScript().then(function () {
+      hsFormHost.innerHTML = "";
+      window.hbspt.forms.create({
+        portalId: HS_PORTAL,
+        formId: HS_FORM[lang] || HS_FORM.th,
+        region: HS_REGION,
+        target: "#hubspotContactForm"
+      });
+    }).catch(function () {
+      hsFormHost.innerHTML = '<p class="cta__hs-form-error">' +
+        (lang === "th"
+          ? "โหลดแบบฟอร์มไม่สำเร็จ กรุณาลองใหม่ หรือติดต่อ sales@softnix.co.th"
+          : "Failed to load the form. Please retry or contact sales@softnix.co.th") +
+        "</p>";
+    });
+  }
+
+  document.addEventListener("privateclaw:langchange", function (e) {
+    var lang = e.detail.lang;
+    syncDatasheetLink(lang);
+    renderHubSpotForm(lang);
+  });
+
+  (function initialSync() {
+    var lang = document.documentElement.getAttribute("lang") || "th";
+    syncDatasheetLink(lang);
+    renderHubSpotForm(lang);
+  })();
 })();
