@@ -845,6 +845,48 @@ h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); }
 .cta__hs-form-loading { color: var(--muted); font-size: 0.92rem; text-align: center; padding: 40px 0; }
 .cta__hs-form-error { color: #c0392b; font-size: 0.92rem; text-align: center; padding: 40px 0; }
 
+/* ---------------- Lead-gated datasheet download modal ---------------- */
+.lead-dl-modal {
+  position: fixed; inset: 0; z-index: 400;
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.lead-dl-modal.open { display: flex; }
+.lead-dl-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(20, 17, 12, .78);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.lead-dl-dialog {
+  position: relative; z-index: 1;
+  width: min(480px, 100%);
+  max-height: min(90vh, 720px);
+  overflow: auto;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 28px 24px 24px;
+}
+.lead-dl-close {
+  position: absolute; top: 12px; right: 12px;
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  display: grid; place-items: center; cursor: pointer;
+}
+.lead-dl-close:hover { background: var(--bg-alt); border-color: var(--lime); color: var(--lime); }
+.lead-dl-title {
+  margin: 0 36px 8px 0;
+  font-size: 1.25rem; font-weight: 700; color: var(--ink); line-height: 1.35;
+}
+.lead-dl-sub {
+  margin: 0 0 18px; font-size: .92rem; color: var(--muted); line-height: 1.55;
+}
+.lead-dl-form { min-height: 120px; }
+.lead-dl-form iframe { max-width: 100% !important; }
+.lead-dl-note {
+  margin: 14px 0 0; font-size: .78rem; color: var(--muted);
+}
+
 /* ---------------- Footer ---------------- */
 .footer {
   background: #0e0c09;

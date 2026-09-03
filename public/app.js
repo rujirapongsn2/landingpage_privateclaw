@@ -131,17 +131,17 @@
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  /* ---------------- Hero: Download Datasheet (per language) ---------------- */
+  /* ---------------- Hero: Download Datasheet (lead-gated, per language) ---------------- */
   var DATASHEET_URL = {
     th: "assets/Softnix_PrivateClaw_Datasheet_TH.pdf",
     en: "assets/Softnix_PrivateClaw_Datasheet_EN.pdf"
   };
   var heroDatasheetLink = document.getElementById("heroDatasheetLink");
+  var currentLang = document.documentElement.getAttribute("lang") || "th";
 
   function syncDatasheetLink(lang) {
     if (!heroDatasheetLink) return;
-    var url = DATASHEET_URL[lang] || DATASHEET_URL.th;
-    heroDatasheetLink.setAttribute("href", url);
+    heroDatasheetLink.setAttribute("href", DATASHEET_URL[lang] || DATASHEET_URL.th);
   }
 
   /* ---------------- Contact: HubSpot form (per language) ---------------- */
@@ -195,15 +195,110 @@
     });
   }
 
+  /* ---------------- Lead-gated datasheet download modal ---------------- */
+  var dlModal, dlFormHost, dlCreatedForLang = null;
+
+  function ensureDatasheetModal() {
+    if (dlModal) return dlModal;
+    dlModal = document.createElement("div");
+    dlModal.className = "lead-dl-modal";
+    dlModal.id = "datasheetModal";
+    dlModal.setAttribute("role", "dialog");
+    dlModal.setAttribute("aria-modal", "true");
+    dlModal.setAttribute("aria-labelledby", "datasheetModalTitle");
+    dlModal.innerHTML =
+      '<div class="lead-dl-backdrop" data-dl-close="1"></div>' +
+      '<div class="lead-dl-dialog">' +
+      '  <button type="button" class="lead-dl-close" data-dl-close="1" aria-label="Close">' +
+      '    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
+      "  </button>" +
+      '  <h2 class="lead-dl-title" id="datasheetModalTitle"></h2>' +
+      '  <p class="lead-dl-sub" id="datasheetModalSub"></p>' +
+      '  <div class="lead-dl-form" id="datasheetHsForm"></div>' +
+      '  <p class="lead-dl-note" id="datasheetModalNote"></p>' +
+      "</div>";
+    document.body.appendChild(dlModal);
+    dlFormHost = dlModal.querySelector("#datasheetHsForm");
+    dlModal.addEventListener("click", function (e) {
+      if (e.target && e.target.getAttribute("data-dl-close")) closeDatasheetModal();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && dlModal.classList.contains("open")) closeDatasheetModal();
+    });
+    return dlModal;
+  }
+
+  var DL_COPY = {
+    th: { title: "ดาวน์โหลด Softnix PrivateClaw Datasheet", sub: "กรอกแบบฟอร์มสั้นๆ แล้วระบบจะเปิดไฟล์ Datasheet ให้ดาวน์โหลด", note: "ข้อมูลใช้เพื่อติดต่อกลับจาก Softnix เท่านั้น", loading: "กำลังโหลดแบบฟอร์ม…", error: "โหลดแบบฟอร์มไม่สำเร็จ กรุณาลองใหม่ หรือติดต่อ sales@softnix.co.th" },
+    en: { title: "Download the Softnix PrivateClaw Datasheet", sub: "Fill in this short form and we'll open the datasheet for download.", note: "Your details are used only for Softnix follow-up.", loading: "Loading form…", error: "Failed to load the form. Please retry or contact sales@softnix.co.th" }
+  };
+
+  function openPdf(url) {
+    var a = document.createElement("a");
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }
+
+  function showDatasheetForm(lang) {
+    if (!dlFormHost) return;
+    dlCreatedForLang = lang;
+    var copy = DL_COPY[lang] || DL_COPY.th;
+    dlFormHost.innerHTML = '<p class="cta__hs-form-loading">' + copy.loading + "</p>";
+    loadHubSpotScript().then(function () {
+      dlFormHost.innerHTML = "";
+      window.hbspt.forms.create({
+        portalId: HS_PORTAL,
+        formId: HS_FORM[lang] || HS_FORM.th,
+        region: HS_REGION,
+        target: "#datasheetHsForm",
+        onFormSubmitted: function () {
+          openPdf(DATASHEET_URL[lang] || DATASHEET_URL.th);
+          setTimeout(closeDatasheetModal, 600);
+        }
+      });
+    }).catch(function () {
+      dlFormHost.innerHTML = '<p class="cta__hs-form-error">' + copy.error + "</p>";
+    });
+  }
+
+  function openDatasheetModal() {
+    ensureDatasheetModal();
+    var lang = currentLang;
+    var copy = DL_COPY[lang] || DL_COPY.th;
+    dlModal.querySelector("#datasheetModalTitle").textContent = copy.title;
+    dlModal.querySelector("#datasheetModalSub").textContent = copy.sub;
+    dlModal.querySelector("#datasheetModalNote").textContent = copy.note;
+    dlModal.classList.add("open");
+    document.body.style.overflow = "hidden";
+    if (dlCreatedForLang !== lang) showDatasheetForm(lang);
+  }
+
+  function closeDatasheetModal() {
+    if (!dlModal) return;
+    dlModal.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  if (heroDatasheetLink) {
+    heroDatasheetLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      openDatasheetModal();
+    });
+  }
+
   document.addEventListener("privateclaw:langchange", function (e) {
-    var lang = e.detail.lang;
-    syncDatasheetLink(lang);
-    renderHubSpotForm(lang);
+    currentLang = e.detail.lang;
+    syncDatasheetLink(currentLang);
+    renderHubSpotForm(currentLang);
+    dlCreatedForLang = null; // force re-render next time the modal opens in the new language
   });
 
   (function initialSync() {
-    var lang = document.documentElement.getAttribute("lang") || "th";
-    syncDatasheetLink(lang);
-    renderHubSpotForm(lang);
+    syncDatasheetLink(currentLang);
+    renderHubSpotForm(currentLang);
   })();
 })();
